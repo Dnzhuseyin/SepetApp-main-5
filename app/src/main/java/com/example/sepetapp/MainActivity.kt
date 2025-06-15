@@ -26,12 +26,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.filled.CameraAlt
-import androidx.compose.material.icons.filled.ErrorOutline
-import androidx.compose.material.icons.filled.Inventory
-import androidx.compose.material.icons.filled.LocalGroceryStore
-import androidx.compose.material.icons.filled.QrCodeScanner
-import androidx.compose.material.icons.filled.ShoppingBasket
+import com.example.sepetapp.ui.theme.Icons
+import com.example.sepetapp.ui.theme.Custom
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -433,8 +429,8 @@ fun QrCodeScannerScreen(onSepetBulundu: (String) -> Unit) {
                 verticalArrangement = Arrangement.Center
             ) {
                 Icon(
-                    imageVector = Icons.Default.CameraAlt,
-                    contentDescription = null,
+                    imageVector = Icons.Custom.CameraAlt,
+                    contentDescription = "Kamera",
                     modifier = Modifier.size(80.dp),
                     tint = Color.White
                 )
@@ -502,8 +498,8 @@ fun QrCodeScannerScreen(onSepetBulundu: (String) -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Icon(
-                    imageVector = Icons.Default.QrCodeScanner,
-                    contentDescription = null,
+                    imageVector = Icons.Custom.QrCodeScanner,
+                    contentDescription = "QR Kod",
                     modifier = Modifier.size(48.dp),
                     tint = Color.White
                 )
@@ -514,7 +510,6 @@ fun QrCodeScannerScreen(onSepetBulundu: (String) -> Unit) {
                     color = Color.White,
                     fontWeight = FontWeight.Bold
                 )
-                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Sepetinizin üzerindeki QR kodu telefonunuza okutun",
                     style = MaterialTheme.typography.bodyLarge,
@@ -697,8 +692,8 @@ fun DetayEkrani(
                             ) {
                                 Icon(
                                     imageVector = when (sepet.durum) {
-                                        SepetDurumu.BOS -> Icons.Default.ShoppingBasket
-                                        SepetDurumu.DOLU -> Icons.Default.Inventory
+                                        SepetDurumu.BOS -> Icons.Custom.ShoppingBasket
+                                        SepetDurumu.DOLU -> Icons.Custom.Inventory
                                         SepetDurumu.KULLANIMDA -> Icons.Default.ShoppingCart
                                     },
                                     contentDescription = null,
@@ -749,8 +744,8 @@ fun DetayEkrani(
                                 ),
                                 leadingIcon = {
                                     Icon(
-                                        Icons.Default.LocalGroceryStore,
-                                        contentDescription = null,
+                                        Icons.Custom.LocalGroceryStore,
+                                        contentDescription = "Sepet",
                                         tint = GreenPrimary
                                     )
                                 }
@@ -850,8 +845,8 @@ fun EmptyBasketCard() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
-                imageVector = Icons.Default.ShoppingBasket,
-                contentDescription = null,
+                imageVector = Icons.Custom.ShoppingBasket,
+                contentDescription = "Boş Sepet",
                 modifier = Modifier.size(64.dp),
                 tint = TextTertiary
             )
